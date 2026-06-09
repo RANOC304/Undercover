@@ -1,0 +1,125 @@
+.page-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-6);
+  transition: background-color 0.1s; // ultra fast blackout transition
+
+  &.blackout-bg {
+    background: #000 !important; // Absolute black
+    z-index: 9999;
+  }
+}
+
+.state-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pass-card {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding: var(--spacing-8) var(--spacing-6);
+  
+  .subtitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2);
+  }
+  
+  .player-name {
+    color: var(--color-cyan);
+    margin-bottom: var(--spacing-8);
+    font-size: 2.5rem;
+    word-break: break-word;
+  }
+  
+  .lg-btn {
+    width: 100%;
+    padding: var(--spacing-6);
+  }
+
+  .cancel-btn {
+    width: 100%;
+    margin-top: var(--spacing-3);
+    font-size: 0.85rem;
+    opacity: 0.65;
+    padding: var(--spacing-3);
+
+    &:active { opacity: 1; }
+  }
+}
+
+.reveal-view {
+  width: 100%;
+  max-width: 400px;
+  height: 60vh;
+  min-height: 400px;
+}
+
+.card-face-back {
+  padding: var(--spacing-8);
+  text-align: center;
+  
+  .subtitle {
+    margin-top: var(--spacing-6);
+    font-size: var(--font-size-lg);
+    color: var(--color-text-muted);
+  }
+  
+  .secret-word {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--color-violet);
+    text-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+    word-break: break-word;
+    
+    &.danger-text {
+      color: var(--color-danger);
+      text-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+    }
+    
+    .icon {
+      font-size: 4rem;
+      margin-bottom: var(--spacing-2);
+    }
+  }
+  
+  .partner-info {
+    margin-top: var(--spacing-4);
+    padding: var(--spacing-3) var(--spacing-5);
+    background: rgba(124, 58, 237, 0.15);
+    border: 1px solid rgba(124, 58, 237, 0.35);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+
+    .partner-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      margin-bottom: var(--spacing-1);
+    }
+
+    .partner-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-cyan);
+    }
+  }
+
+  .mt-auto {
+    margin-top: auto;
+    width: 100%;
+  }
+}

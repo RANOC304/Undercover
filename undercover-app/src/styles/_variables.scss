@@ -1,0 +1,54 @@
+/**
+ * Design Tokens for Undercover App
+ * Best practices: 2026 Dark-mode-first, neon accents
+ */
+
+:root {
+  // Core Palette
+  --color-bg-deep: #0A0E1A;
+  --color-violet: #7C3AED;
+  --color-cyan: #06B6D4;
+  --color-text: #F8FAFC;
+  --color-text-muted: #94A3B8;
+
+  // Accents
+  --color-danger: #EF4444;       // For Mr. White losing
+  --color-success: #10B981;      // For winning
+  --color-card-bg: rgba(255, 255, 255, 0.05);
+  --color-card-border: rgba(255, 255, 255, 0.1);
+
+  // Typography
+  /* Fluid typography clamp */
+  --font-size-base: clamp(16px, 4vw, 20px);
+  --font-size-h1: clamp(2rem, 8vw, 3.5rem);
+  --font-size-h2: clamp(1.5rem, 6vw, 2.5rem);
+  --font-size-lg: clamp(1.125rem, 5vw, 1.5rem);
+  
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+  // Spacing
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+
+  // Utilities
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+  --border-radius-xl: 32px;
+  --border-radius-round: 9999px;
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Safe area insets (notches, home bars)
+  --safe-top: env(safe-area-inset-top, 20px);
+  --safe-bottom: env(safe-area-inset-bottom, 20px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}

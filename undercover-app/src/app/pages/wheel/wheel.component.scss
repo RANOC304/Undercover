@@ -1,0 +1,190 @@
+.page-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-6);
+}
+
+.wheel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 420px;
+  width: 90%;
+  margin: auto;
+  min-height: 480px;
+  padding: var(--spacing-8) var(--spacing-6);
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+// Celebration details
+.winner-announcement {
+  opacity: 0;
+  transform: scale(0.9) translateY(-10px);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0;
+  width: 100%;
+  pointer-events: none;
+
+  &.show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    max-height: 160px;
+    margin-top: var(--spacing-2);
+    margin-bottom: var(--spacing-6);
+  }
+
+  .winner-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .winner-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+}
+
+.glow-text {
+  color: #ffffff;
+  text-shadow: 
+    0 0 10px rgba(6, 182, 212, 0.8),
+    0 0 20px rgba(124, 58, 237, 0.5),
+    0 0 30px rgba(124, 58, 237, 0.3);
+  font-size: clamp(2rem, 8vw, 2.75rem);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+// Wheel structure
+.wheel-outer-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--spacing-4) 0;
+}
+
+// The physical neon pointer at the top
+.wheel-pointer {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(135deg, #ffffff, var(--color-cyan));
+  border-radius: 4px;
+  z-index: 10;
+  box-shadow: 
+    0 0 15px var(--color-cyan),
+    0 0 5px rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  
+  &.wiggle {
+    animation: pointerWiggle 0.15s ease-in-out infinite alternate;
+  }
+}
+
+.wheel-canvas-container {
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 30px rgba(124, 58, 237, 0.25),
+    0 0 15px rgba(6, 182, 212, 0.15),
+    inset 0 0 20px rgba(0, 0, 0, 0.6);
+  border: 5px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  background: var(--color-bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.wheel-canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+// Actions
+.action-container {
+  margin-top: var(--spacing-6);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.lg-btn {
+  width: 100%;
+  max-width: 280px;
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: var(--font-size-base);
+  border-radius: var(--border-radius-round);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all var(--transition-fast);
+}
+
+.glow-button {
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
+  &:active {
+    box-shadow: 0 2px 10px rgba(6, 182, 212, 0.2);
+  }
+}
+
+.disabled-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-muted);
+  border-color: rgba(255, 255, 255, 0.05);
+  cursor: not-allowed;
+}
+
+.start-game-btn {
+  background: linear-gradient(135deg, var(--color-violet), #ec4899);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+  animation: pulseGlow 2s infinite;
+
+  &:active {
+    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.2);
+  }
+}
+
+// Keyframes
+@keyframes pointerWiggle {
+  0% {
+    transform: translateX(-50%) rotate(38deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(52deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(124, 58, 237, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+  }
+}
