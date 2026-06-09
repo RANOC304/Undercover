@@ -295,7 +295,6 @@ export class LanguageService {
       if (saved === 'en' || saved === 'fr') return saved;
     } catch {}
 
-    const browserLang = typeof navigator !== 'undefined' ? (navigator.language || '') : '';
-    return browserLang.startsWith('en') ? 'en' : 'fr';
+    return 'fr';
   }
 }

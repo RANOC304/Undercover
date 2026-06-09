@@ -2,12 +2,20 @@
 // HOME PAGE — Layout
 // ======================================================================
 
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .page-container {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 0 var(--spacing-5);
-  padding-top: calc(var(--safe-top) + var(--spacing-4));
+  padding-top: var(--spacing-4);
   padding-bottom: 0;
   overflow: hidden;
 }

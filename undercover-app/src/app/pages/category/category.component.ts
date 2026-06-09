@@ -56,16 +56,18 @@ import { Haptics, ImpactStyle } from '@capacitor/haptics';
   `,
   styles: [`
     :host {
-      display: block;
-      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
     }
     .cat-page {
       display: flex;
       flex-direction: column;
       height: 100%;
-      padding-top: calc(env(safe-area-inset-top, 0px) + 0.75rem);
-      padding-bottom: env(safe-area-inset-bottom, 0px);
+      padding-top: 0.75rem;
+      padding-bottom: 0;
     }
     .cat-header {
       display: flex;
