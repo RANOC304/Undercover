@@ -1,5 +1,7 @@
 # UndercoverApp
 
+See the [repository README](../README.md) for local setup, mobile builds, and licensing.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
 
 ## Development server
